@@ -6,7 +6,12 @@ UCI HAR Dataset - Human Activity Recognition Using Smartphones
 ## Variables
 - `subjectID` - ID of the subject (1-30)
 - `activity` - Type of activity (WALKING, SITTING, etc.)
-- remaining: `[measurement columns]` - Mean and standard deviation measurements from accelerometer and gyroscope
+- `[measurement columns]` - Mean and standard deviation measurements from accelerometer and gyroscope
+
+-All measurement variables are normalized and bounded within [-1, 1]
+-Original accelerometer measurements were in standard gravity units (g)
+-Original gyroscope measurements were in radians/second (rad/s)
+-The normalization removes the units, making all values dimensionless
 
 ## Transformations
 1. Merged training and test datasets
