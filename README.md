@@ -9,7 +9,7 @@ This project cleans and analyzes the UCI HAR Dataset containing smartphone accel
 - `tidy_data.txt` - The final output dataset
 
 ## How to run the script
-1. Download the dataset from [link]
+1. Download the dataset from https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip
 2. Set your working directory to the folder containing the data
 3. Run `source("run_analysis.R")`
 4. The script will create `tidy_data.txt` in your working directory
