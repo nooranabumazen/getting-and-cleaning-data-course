@@ -1,7 +1,6 @@
 library(dplyr)
 
 #reading in relevant data files from folder on computer
-
 testset = read.table("test/X_test.txt")
 testactivity = read.table("test/y_test.txt")
 testIDs = read.table("test/subject_test.txt")
@@ -11,6 +10,7 @@ trainactivity = read.table("train/y_train.txt")
 trainIDs = read.table("train/subject_train.txt")
 
 features = read.table("features.txt")
+activity_labels = read.table("activity_labels.txt")
 
 # Step 1: Merge training and test sets
 fulldata = rbind(trainset, testset)
@@ -29,6 +29,7 @@ meanstddata$subjectID = fullIDs$V1
 
 # Assign column names
 colnames(meanstddata) = c(features$V2[mean_std_indices], "activity", "subjectID")
+colnames(meanstddata) <- gsub("\\(\\)", "", colnames(meanstddata))
 
 # Step 5: Create summary dataset
 summarydataset = meanstddata %>%
@@ -37,3 +38,4 @@ summarydataset = meanstddata %>%
 
 # Step 6: save tidy dataset to text file
 write.table(summarydataset, file = "tidy_data.txt", row.names = FALSE)
+
